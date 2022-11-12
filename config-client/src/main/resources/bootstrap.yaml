@@ -1,0 +1,23 @@
+server:
+  port: 1800
+spring:
+  cloud:
+    config:
+      uri: http://localhost:1300/
+      name: datasource
+      label: main
+      profile: prod
+#以下配置需要在 config-center 的配置中心进行配置，其作用是可以让本地的配置覆盖远程配置
+#      allow-override: true
+#      override-none: true
+#      override-system-properties: false
+
+# 将服务中的Actuator的"端点（endpoint)"暴露出来，可进行"手动刷新"配置，可以使用以下方法：
+# curl -X POST "http://localhost:1800/actuator/refresh"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   # * 在yaml 文件属于关键字，所以需要加引号，此处代表所有端点
+
+

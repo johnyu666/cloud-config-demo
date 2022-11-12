@@ -1,0 +1,5 @@
+### 客户端获取配置信息
+GET http://localhost:1800/test1
+
+### 客户端刷新配置
+POST http://localhost:1800/actuator/refresh

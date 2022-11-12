@@ -1,0 +1,7 @@
+
+### 获取信息1
+GET http://localhost:1300/datasource/prod/main
+
+### 获取信息2
+GET http://localhost:1300/main/datasource-prod.yml
+

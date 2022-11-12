@@ -1,0 +1,6 @@
+# 自定义变量，用来替换从 config-center中获取的datasource.url
+database: mydb
+
+spring:
+  datasource:
+    url: http://johnyu.cn:3306/${database}
