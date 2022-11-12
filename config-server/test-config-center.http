@@ -5,3 +5,5 @@ GET http://localhost:1300/datasource/prod/main
 ### 获取信息2
 GET http://localhost:1300/main/datasource-prod.yml
 
+###  配置中心刷新
+POST http://localhost:1300/actuator/bus-refresh
