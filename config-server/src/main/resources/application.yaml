@@ -1,9 +1,17 @@
 server:
   port: 1300
 spring:
+  application:
+    name: config-server
+
   cloud:
     config:
       server:
         git:
           uri: https://github.com/johnyu666/config-center.git
           lable: main #git分支
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
