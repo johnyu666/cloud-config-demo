@@ -1,9 +1,14 @@
 server:
   port: 1800
 spring:
+  application:
+    name: config-client
   cloud:
     config:
-      uri: http://localhost:1300/
+#      uri: http://localhost:1300/
+      discovery:
+        enabled: true
+        service-id: config-server
       name: datasource
       label: main
       profile: prod
@@ -19,6 +24,10 @@ spring:
     port: 5672
     host: localhost
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
 # 将服务中的Actuator的"端点（endpoint)"暴露出来，可进行"手动刷新"配置，可以使用以下方法：
 # curl -X POST "http://localhost:1800/actuator/refresh"
 management:
